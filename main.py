@@ -31,6 +31,7 @@ sleep(0.5)
 import enviro
 import os
 
+import scd41
 
 try:
   # initialise enviro
@@ -76,6 +77,7 @@ try:
   #   del readings["temperature"]        # remove the temperature reading
   #
   #   readings["custom"] = my_reading()  # add my custom reading value
+  reading.update(scd41.get_sensor_readings())
 
   # is an upload destination set?
   if enviro.config.destination:
